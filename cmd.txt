@@ -1,0 +1,1 @@
+az containerapp create -n kedsouza-container-test -g kedsouza-ca-no-vnet --environment managedEnvironment-kedsouzacanovne-82d8 --yaml "app.yml"

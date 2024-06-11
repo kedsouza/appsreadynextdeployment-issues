@@ -1,0 +1,30 @@
+location: southcentralus
+name: kedsouza-container-test
+resourceGroup: kedsouza-ca-no-vnet
+type: Microsoft.App/containerApps
+properties:
+  environmentId: '/subscriptions/bf7728b1-4728-478d-96bc-db17b8ebc9ff/resourceGroups/kedsouza-ca-no-vnet/providers/Microsoft.App/managedEnvironments/managedEnvironment-kedsouzacanovne-82d8'
+  configuration:
+    secrets:
+      - name : myregistrypassword
+        value: mLsQg9QsquPIkXgD7Jo8LOAg3jDA6mo1GaU3MZoTs1+ACRCdrOI8
+    ingress:
+      external: true
+      allowInsecure: false
+      targetPort: 80
+      traffic:
+        - latestRevision: true
+          weight: 100
+      transport: Auto
+    registries: 
+      - passwordSecretRef: myregistrypassword
+        server: kedsouzatestacr.azurecr.io
+        username: kedsouzatestacr
+  template:
+    containers:
+    - name: celebration
+      image: kedsouzatestacr.azurecr.io/celebration:latest
+      resources:
+        cpu: 0.25
+        memory: '0.5Gi'
+      
