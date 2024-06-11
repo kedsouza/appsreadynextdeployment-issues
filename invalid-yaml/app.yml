@@ -7,7 +7,7 @@ properties:
   configuration:
     secrets:
       - name : myregistrypassword
-        value: mLsQg9QsquPIkXgD7Jo8LOAg3jDA6mo1GaU3MZoTs1+ACRCdrOI8
+        value: yourregistrypassword
     ingress:
       external: true
       allowInsecure: false
