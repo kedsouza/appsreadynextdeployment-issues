@@ -16,10 +16,10 @@ properties:
         - latestRevision: true
           weight: 100
       transport: Auto
-      registries: 
-        - passwordSecretRef: myregistrypassword
-          server: kedsouzatestacr.azurecr.io
-          username: kedsouzatestacr
+    registries: 
+      - passwordSecretRef: myregistrypassword
+        server: kedsouzatestacr.azurecr.io
+        username: kedsouzatestacr
   template:
     containers:
     - name: celebration
